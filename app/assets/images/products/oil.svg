@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 340 430" role="img" aria-label="Олійка Stargazing Lunar Calm">
+ <defs><linearGradient id="glass" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#efe0ef"/><stop offset=".5" stop-color="#cab6de"/><stop offset="1" stop-color="#a999bd"/></linearGradient></defs>
+ <ellipse cx="170" cy="371" rx="87" ry="13" fill="#67516b" opacity=".13"/>
+ <rect x="102" y="139" width="136" height="219" rx="31" fill="#a58ba9" opacity=".85"/><rect x="108" y="146" width="124" height="204" rx="27" fill="url(#glass)"/>
+ <rect x="139" y="90" width="61" height="59" rx="7" fill="#3a375a"/><rect x="133" y="80" width="73" height="18" rx="4" fill="#756083"/><rect x="154" y="68" width="30" height="17" rx="3" fill="#a496b4"/>
+ <rect x="123" y="223" width="96" height="89" rx="3" fill="#fbf4f4" opacity=".93"/>
+ <g text-anchor="middle"><text x="170" y="250" fill="#8a77a0" font-family="Georgia,serif" font-size="16">✧</text><text x="170" y="274" fill="#645274" font-family="Georgia,serif" font-size="15">stargazing</text><text x="170" y="293" fill="#7b6d80" font-family="Arial,sans-serif" font-size="9" letter-spacing="1">LUNAR CALM</text></g>
+ <path d="M247 144Q271 189 252 233" fill="none" stroke="#f8f6f9" stroke-width="4" opacity=".6"/>
+ </svg>

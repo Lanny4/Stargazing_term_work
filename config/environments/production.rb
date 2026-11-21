@@ -1,0 +1,14 @@
+Rails.application.configure do
+  config.enable_reloading = false
+  config.eager_load = true
+  config.consider_all_requests_local = false
+  config.action_controller.perform_caching = true
+  config.public_file_server.enabled = true
+  config.force_ssl = true
+  config.log_level = :info
+  config.logger = ActiveSupport::Logger.new($stdout)
+  config.log_tags = [:request_id]
+  config.active_support.report_deprecations = false
+  config.assets.compile = false
+  config.hosts << ENV["APP_HOST"] if ENV["APP_HOST"].present?
+end

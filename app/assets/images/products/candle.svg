@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 340 430" role="img" aria-label="Ароматична свічка Stargazing">
+ <defs><linearGradient id="jar" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#72628b"/><stop offset=".52" stop-color="#454263"/><stop offset="1" stop-color="#2f3451"/></linearGradient><linearGradient id="wax" x1="0" y1="0" x2="0" y2="1"><stop stop-color="#f4e5e4"/><stop offset="1" stop-color="#e5c9d2"/></linearGradient></defs>
+ <ellipse cx="170" cy="366" rx="100" ry="15" fill="#5c4a68" opacity=".15"/><rect x="79" y="177" width="182" height="178" rx="25" fill="url(#jar)"/>
+ <rect x="85" y="178" width="170" height="38" rx="16" fill="url(#wax)"/><ellipse cx="170" cy="177" rx="84" ry="21" fill="#fcf1ee"/>
+ <path d="M170 154Q153 130 172 103Q191 139 170 154Z" fill="#e7b388"/><path d="M170 150Q162 138 171 125Q180 139 170 150Z" fill="#fff1a8"/>
+ <path d="M170 154v18" stroke="#5b4d51" stroke-width="2"/>
+ <g text-anchor="middle"><text x="170" y="260" fill="#e6daea" font-family="Georgia,serif" font-size="20">✧</text><text x="170" y="283" fill="#fff" font-family="Georgia,serif" font-size="15">stargazing</text><text x="170" y="304" fill="#d9c1e5" font-family="Arial,sans-serif" font-size="9" letter-spacing="2">MIDNIGHT GLOW</text><text x="170" y="323" fill="#e8deef" font-family="Arial,sans-serif" font-size="10">180 g</text></g>
+ <g fill="#fbf4ff"><path d="M70 104h5m-2-3v6M264 92h6m-3-3v6" stroke="#b69ac8" stroke-width="2"/></g>
+ </svg>

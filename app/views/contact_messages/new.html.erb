@@ -1,0 +1,9 @@
+<% content_for :title, "Зворотний зв'язок — Stargazing" %>
+<section class="auth-wrap container"><div class="auth-card"><div class="eyebrow">НАПИШИ НАМ</div><h1>Маєш <em>запитання?</em></h1><p class="muted">Залиш повідомлення, і воно з’явиться в адміністративній панелі магазину.</p><%= errors_for(@message) %>
+<%= form_with model: @message do |f| %>
+<div class="form-group"><%= f.label :name, "Ім’я" %><%= f.text_field :name, class: "field", required: true %></div>
+<div class="form-group"><%= f.label :email, "Email" %><%= f.email_field :email, class: "field", required: true %></div>
+<div class="form-group"><%= f.label :subject, "Тема" %><%= f.text_field :subject, class: "field", required: true %></div>
+<div class="form-group"><%= f.label :message, "Ваше повідомлення" %><%= f.text_area :message, class: "field", rows: 6, required: true %></div>
+<%= f.submit "Надіслати повідомлення", class: "btn btn-full" %><% end %>
+</div></section>

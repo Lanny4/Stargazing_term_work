@@ -1,0 +1,4 @@
+<% content_for :title, "Мої замовлення — Stargazing" %>
+<section class="container section inner-page"><div class="eyebrow">ІСТОРІЯ ЗАМОВЛЕНЬ</div><h1>Мої <em>замовлення</em></h1>
+<% if @orders.empty? %><div class="empty-state"><h2>Замовлень ще немає</h2><%= link_to "До каталогу", products_path, class: "btn" %></div><% else %><div class="table-scroll"><table class="data-table"><thead><tr><th>№</th><th>Дата</th><th>Сума</th><th>Статус</th><th></th></tr></thead><tbody><% @orders.each do |order| %><tr><td>#<%= order.id %></td><td><%= order.created_at.strftime("%d.%m.%Y") %></td><td><%= money(order.total_cents) %></td><td><%= display_status(order.status) %></td><td><%= link_to "Деталі", order_path(order), class: "text-link" %></td></tr><% end %></tbody></table></div><% end %>
+</section>

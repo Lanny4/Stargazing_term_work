@@ -1,0 +1,7 @@
+class Review < ApplicationRecord
+  belongs_to :user
+  belongs_to :product
+  validates :rating, inclusion: { in: 1..5 }
+  validates :body, presence: true, length: { minimum: 10, maximum: 1000 }
+  validates :user_id, uniqueness: { scope: :product_id, message: "вже залишив відгук про цей товар" }
+end

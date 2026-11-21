@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 340 430" role="img" aria-label="Косметичний засіб SUN DAY">
+  <defs><radialGradient id="shine" cx=".25" cy=".2" r=".85"><stop stop-color="#fff" stop-opacity=".65"/><stop offset="1" stop-color="#e4e8d6" stop-opacity=".03"/></radialGradient></defs>
+  <ellipse cx="176" cy="225" rx="141" ry="180" fill="url(#shine)"/>
+  <path d="M57 300c-22-46-11-101 34-138" fill="none" stroke="#fff" opacity=".65" stroke-width="2"/>
+  <ellipse cx="170" cy="376" rx="88" ry="14" fill="#554c4c" opacity=".1"/>
+    <path d="M113 119 Q170 103 227 119 L248 331 Q248 351 226 354 L111 354 Q93 351 95 331 Z" fill="#faf7e9" stroke="#9baf92" stroke-width="3"/>
+    <rect x="121" y="90" width="98" height="33" rx="8" fill="#9baf92"/>
+    <rect x="104" y="193" width="132" height="103" rx="8" fill="#e4e8d6"/>
+  <g text-anchor="middle"><text x="170" y="235" fill="#9baf92" font-family="Georgia,serif" font-size="15" letter-spacing="0.1">stargazing</text>
+  <path d="M139 248 H201" stroke="#9baf92" opacity=".5"/><text x="170" y="274" fill="#615e5a" font-family="Arial,sans-serif" font-size="10" letter-spacing="2">SUN DAY</text>
+  <text x="170" y="297" fill="#615e5a" font-family="Arial,sans-serif" font-size="11">SPF 50</text></g>
+  <path d="M55 104q20-28 43-36M252 95q21 18 27 40" stroke="#9baf92" fill="none" stroke-width="2" opacity=".35"/>
+</svg>

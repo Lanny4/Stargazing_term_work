@@ -1,0 +1,3 @@
+<% content_for :title, "Обрані товари — Stargazing" %>
+<section class="container section inner-page"><div class="section-kicker">ТВОЇ ЗБЕРЕЖЕНІ ЗНАХІДКИ</div><h1>Моє <em>обране</em> <span class="title-star">♡</span></h1><p class="muted">Зберігай засоби, які хочеться спробувати. Обране зберігається в поточному браузері.</p>
+<% if @products.any? %><div class="product-grid"><%= render partial: "products/card", collection: @products, as: :product %></div><% else %><div class="empty-state"><div class="empty-icon">♡</div><h2>Тут поки немає зірочок</h2><p>Натискай на сердечко біля товарів, щоб зберігати фаворитів.</p><%= link_to "Шукати натхнення", products_path(anchor: "catalog"), class: "btn" %></div><% end %></section>

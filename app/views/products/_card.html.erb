@@ -1,0 +1,17 @@
+<article class="product-card">
+  <div class="product-thumb">
+    <%= link_to product_path(product), class: "product-photo-link", aria: { label: "Переглянути #{product.name}" } do %>
+      <span class="product-kicker"><%= product.category.name %></span>
+      <%= product_illustration(product) %>
+    <% end %>
+    <%= button_to toggle_favorite_path(product), method: :post, class: "favorite-button #{'is-favorite' if favorite?(product)}", title: (favorite?(product) ? "Прибрати з обраного" : "Додати до обраного"), aria: { label: (favorite?(product) ? "Прибрати з обраного" : "Додати до обраного") } do %><span aria-hidden="true"><%= favorite?(product) ? "♥" : "♡" %></span><% end %>
+    <% if product.stock.zero? %><span class="sold-badge">Немає в наявності</span><% end %>
+  </div>
+  <div class="product-card-bottom">
+    <div class="product-type">ВИБІР STARGAZING</div>
+    <h3><%= link_to product.name, product_path(product) %></h3>
+    <p><%= truncate(product.description, length: 77) %></p>
+    <%= link_to "Переглянути опис →", product_path(product), class: "product-more" %>
+    <div class="product-buy"><strong><%= money(product.price_cents) %></strong><%= button_to product.stock.positive? ? "Додати +" : "Немає", cart_items_path, params: { product_id: product.id, quantity: 1 }, class: "add-btn", disabled: product.stock.zero? %></div>
+  </div>
+</article>

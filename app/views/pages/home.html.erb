@@ -1,0 +1,54 @@
+<% content_for :title, "Stargazing — головна сторінка магазину краси" %>
+<section class="hero">
+  <div class="container hero-inner">
+    <div class="hero-copy">
+      <div class="eyebrow hero-eyebrow"><span class="eyebrow-line"></span> ТВІЙ ПРОСТІР КРАСИ</div>
+      <h1>Твій всесвіт <span class="hero-highlight">сяйва</span> починається тут<span class="hero-period">.</span></h1>
+      <p>Трохи магії у кожному ритуалі догляду. Від щоденного догляду до маленьких моментів турботи про себе — знайди те, що створене саме для тебе.</p>
+      <div class="hero-actions"><%= link_to "Дослідити колекцію", products_path, class: "btn btn-lg hero-cta" %><%= link_to "Наша історія  ↗", about_path, class: "hero-text-link" %></div>
+      <div class="hero-meta"><span>✧ ДОГЛЯД</span><span>✧ КОСМЕТИКА</span><span>✧ ТУРБОТА ПРО СЕБЕ</span></div>
+    </div>
+    <div class="hero-art" aria-label="Фотографії засобів для догляду">
+      <div class="hero-moon" aria-hidden="true"></div>
+      <div class="hero-photo hero-photo-main"><%= product_photo("face-serum", alt: "Фотографія косметичної сироватки", class_name: "hero-real-image", loading: "eager") %></div>
+      <div class="hero-photo hero-photo-side"><%= product_photo("face-cream", alt: "Фотографія крему для обличчя", class_name: "hero-real-image", loading: "eager") %></div>
+      <div class="hero-badge"><strong>ТВОЄ</strong><strong>СЯЙВО</strong><span>✳</span></div>
+      <span class="hero-art-caption">ТУРБОТА ПРО СЕБЕ ЩОДНЯ · 2026</span>
+    </div>
+  </div>
+</section>
+<section class="benefits"><div class="container benefit-grid"><div><span class="benefit-icon">✧</span><div><strong>Вибирай із задоволенням</strong><span>Каталог із продуманими категоріями</span></div></div><div><span class="benefit-icon">♡</span><div><strong>Зберігай улюблене</strong><span>Свій список обраних косметичних знахідок</span></div></div><div><span class="benefit-icon">◈</span><div><strong>Зручно купуй</strong><span>Кошик, доставка й історія замовлень</span></div></div></div></section>
+<section class="category-showcase container">
+  <div class="section-kicker">01 / ОБЕРИ СВОЮ КАТЕГОРІЮ</div>
+  <div class="showcase-heading"><h2>Краса в кожному <em>сузір’ї.</em></h2><p>Усе для особистих ритуалів, в одному місці.</p></div>
+  <div class="category-showcase-grid">
+    <%= link_to products_path(category: "face"), class: "category-tile tile-face" do %>
+      <span class="tile-index">01 / ОБЛИЧЧЯ</span>
+      <%= product_photo("face-serum", alt: "Сироватка для обличчя", class_name: "category-photo") %>
+      <strong>Догляд за обличчям</strong><span class="tile-arrow">↗</span>
+    <% end %>
+    <%= link_to products_path(category: "hair"), class: "category-tile tile-hair" do %>
+      <span class="tile-index">02 / ВОЛОССЯ</span>
+      <%= product_photo("hair-shampoo", alt: "Шампунь і догляд за волоссям", class_name: "category-photo") %>
+      <strong>Догляд за волоссям</strong><span class="tile-arrow">↗</span>
+    <% end %>
+    <%= link_to products_path(category: "body"), class: "category-tile tile-body" do %>
+      <span class="tile-index">03 / ТІЛО</span>
+      <%= product_photo("body-lotion", alt: "Молочко для тіла", class_name: "category-photo") %>
+      <strong>Догляд за тілом</strong><span class="tile-arrow">↗</span>
+    <% end %>
+    <%= link_to products_path(category: "wellness"), class: "category-tile tile-wellness" do %>
+      <span class="tile-index">04 / ВІДПОЧИНОК</span>
+      <%= product_photo("scented-candle", alt: "Ароматична свічка", class_name: "category-photo") %>
+      <strong>Ритуали турботи</strong><span class="tile-arrow">↗</span>
+    <% end %>
+  </div>
+</section>
+
+<section class="section container featured-section">
+  <div class="section-kicker">02 / ПОПУЛЯРНІ ЗНАХІДКИ</div>
+  <div class="section-head"><div><h2>Вибір для твого <em>сяйва.</em></h2><p class="catalog-intro">Знайомся з кількома засобами з нашого каталогу.</p></div><%= link_to "Увесь каталог →", products_path, class: "btn btn-outline" %></div>
+  <% if @featured_products.any? %><div class="product-grid"><%= render partial: "products/card", collection: @featured_products, as: :product %></div><% end %>
+</section>
+<section class="editorial-section"><div class="container editorial-layout"><div class="editorial-art"><span class="editorial-star one">✦</span><span class="editorial-star two">✧</span><div class="editorial-arc"></div><%= product_photo("night-cream", alt: "Фотографія нічного крему", class_name: "editorial-photo") %><span class="editorial-caption">ВЕЧІР ДЛЯ СЕБЕ</span></div><div class="editorial-copy"><div class="section-kicker">03 / МАЛЕНЬКІ МИТІ ТУРБОТИ</div><h2>Твоє сяйво не залежить <em>від часу доби.</em></h2><p>Ранкове очищення, улюблена маска після насиченого дня чи кілька хвилин тиші — краса починається із задоволення бути собою.</p><%= link_to "Більше про Stargazing", about_path, class: "btn btn-outline" %></div></div></section>
+<section class="quote-section"><div class="container quote-inner"><div class="eyebrow">МАЛЕНЬКИЙ ВСЕСВІТ ТУРБОТИ ПРО СЕБЕ</div><h2>Сяй по-своєму.<br><em>Кожного дня.</em></h2><%= link_to "Відкрити каталог", products_path, class: "btn btn-light" %></div></section>

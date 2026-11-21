@@ -1,0 +1,3 @@
+digraph G {graph [label="STARGAZING • СЦЕНАРІЙ ОФОРМЛЕННЯ ЗАМОВЛЕННЯ",labelloc=t,fontsize=25,fontname="DejaVu Sans",ranksep=.62,nodesep=.45,bgcolor="#fffdfa",pad=.3,rankdir=LR];node [shape=box,style="rounded,filled",fillcolor="#ece6f5",color="#9785b2",fontcolor="#2c2b4d",penwidth=1.3,fontname="DejaVu Sans",fontsize=14,margin=".27,.17"];edge [color="#a08ab5",penwidth=1.5,arrowsize=.7,fontname="DejaVu Sans",fontsize=11];
+A[label="Кошик\nтовар + кількість"];B[label="Авторизація\nкористувача"];C[label="Контактні дані\nта доставка"];D[label="Перевірка\nзалишків і цін"];E[label="Транзакція\norder + order_items"];F[label="Зменшення\nскладських залишків"];G[label="Підтвердження\nзамовлення",fillcolor="#d9e4d9"];A->B->C->D->E->F->G;
+}

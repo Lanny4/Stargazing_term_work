@@ -1,0 +1,10 @@
+digraph G {graph [label="STARGAZING • ЛОГІЧНА СТРУКТУРА БАЗИ ДАНИХ",labelloc=t,fontsize=25,fontname="DejaVu Sans",ranksep=1.1,nodesep=.55,bgcolor="#fffdfa",pad=.35,splines=polyline];node [shape=record,style="filled,rounded",fillcolor="#efebf6",color="#9683b1",fontcolor="#292947",penwidth=1.3,fontname="DejaVu Sans",fontsize=13,margin=".16,.11"];edge [color="#a08cbb",penwidth=1.6,arrowsize=.7,fontname="DejaVu Sans",fontsize=11];
+users[label="{USERS|id (PK)\lname, email\lpassword_digest, admin\l}"];
+orders[label="{ORDERS|id (PK)\luser_id (FK)\lshipping_method, payment_method\lstatus, total_cents\l}"];
+reviews[label="{REVIEWS|id (PK)\luser_id (FK), product_id (FK)\lrating, body\l}"];
+categories[label="{CATEGORIES|id (PK)\lname, slug\l}"];
+products[label="{PRODUCTS|id (PK)\lcategory_id (FK)\lname, description\lprice_cents, stock, active\l}"];
+items[label="{ORDER_ITEMS|id (PK)\lorder_id (FK), product_id (FK)\lquantity, price_cents\l}"];
+contact[label="{CONTACT_MESSAGES|id (PK)\lname, email, subject\lmessage\l}"];
+users->orders[label="1:N"];users->reviews[label="1:N"];categories->products[label="1:N"];products->reviews[label="1:N"];orders->items[label="1:N"];products->items[label="1:N"];
+{rank=same;users;categories;contact} {rank=same;orders;products} {rank=same;reviews;items} }

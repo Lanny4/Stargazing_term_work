@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 340 430" role="img" aria-label="Косметичний засіб BODY MILK">
+  <defs><radialGradient id="shine" cx=".25" cy=".2" r=".85"><stop stop-color="#fff" stop-opacity=".65"/><stop offset="1" stop-color="#f0e2cc" stop-opacity=".03"/></radialGradient></defs>
+  <ellipse cx="176" cy="225" rx="141" ry="180" fill="url(#shine)"/>
+  <path d="M57 300c-22-46-11-101 34-138" fill="none" stroke="#fff" opacity=".65" stroke-width="2"/>
+  <ellipse cx="170" cy="376" rx="79" ry="14" fill="#554c4c" opacity=".1"/>
+    <rect x="98" y="147" width="145" height="210" rx="25" fill="#b79773" opacity=".65"/>
+    <rect x="106" y="154" width="129" height="196" rx="22" fill="#fff1de"/>
+    <rect x="128" y="109" width="84" height="49" rx="9" fill="#b79773"/>
+    <rect x="137" y="91" width="66" height="24" rx="5" fill="#665c58"/>
+  <g text-anchor="middle"><text x="170" y="235" fill="#b79773" font-family="Georgia,serif" font-size="15" letter-spacing="0.1">stargazing</text>
+  <path d="M139 248 H201" stroke="#b79773" opacity=".5"/><text x="170" y="274" fill="#615e5a" font-family="Arial,sans-serif" font-size="10" letter-spacing="2">BODY MILK</text>
+  <text x="170" y="297" fill="#615e5a" font-family="Arial,sans-serif" font-size="11">250 ml</text></g>
+  <path d="M55 104q20-28 43-36M252 95q21 18 27 40" stroke="#b79773" fill="none" stroke-width="2" opacity=".35"/>
+</svg>

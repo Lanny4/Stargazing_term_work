@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 340 430" role="img" aria-label="Косметичний засіб HAIR CARE">
+  <defs><radialGradient id="shine" cx=".25" cy=".2" r=".85"><stop stop-color="#fff" stop-opacity=".65"/><stop offset="1" stop-color="#e8d2d8" stop-opacity=".03"/></radialGradient></defs>
+  <ellipse cx="176" cy="225" rx="141" ry="180" fill="url(#shine)"/>
+  <path d="M57 300c-22-46-11-101 34-138" fill="none" stroke="#fff" opacity=".65" stroke-width="2"/>
+  <ellipse cx="169" cy="375" rx="81" ry="15" fill="#554c4c" opacity=".1"/>
+    <rect x="101" y="92" width="138" height="269" rx="36" fill="#8b6c7e"/>
+    <rect x="110" y="159" width="120" height="176" rx="20" fill="#ffeced"/>
+    <rect x="124" y="60" width="90" height="47" rx="8" fill="#8b6c7e"/>
+    <path d="M168 63 L168 45 L235 45" fill="none" stroke="#8b6c7e" stroke-width="9" stroke-linecap="round"/>
+  <g text-anchor="middle"><text x="170" y="235" fill="#8b6c7e" font-family="Georgia,serif" font-size="15" letter-spacing="0.1">stargazing</text>
+  <path d="M139 248 H201" stroke="#8b6c7e" opacity=".5"/><text x="170" y="274" fill="#615e5a" font-family="Arial,sans-serif" font-size="10" letter-spacing="2">HAIR CARE</text>
+  <text x="170" y="297" fill="#615e5a" font-family="Arial,sans-serif" font-size="11">200 ml</text></g>
+  <path d="M55 104q20-28 43-36M252 95q21 18 27 40" stroke="#8b6c7e" fill="none" stroke-width="2" opacity=".35"/>
+</svg>

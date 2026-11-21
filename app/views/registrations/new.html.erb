@@ -1,0 +1,10 @@
+<% content_for :title, "Реєстрація — Stargazing" %>
+<section class="auth-wrap container"><div class="auth-card"><div class="eyebrow">ПРИЄДНУЙСЯ ДО НАС</div><h1>Твій простір <em>турботи</em></h1><p class="muted">Створіть обліковий запис для покупок і відгуків.</p>
+  <%= errors_for(@user) %><%= form_with model: @user, url: registration_path do |f| %>
+    <div class="form-group"><%= f.label :name, "Ім’я" %><%= f.text_field :name, class: "field", required: true, autocomplete: "name" %></div>
+    <div class="form-group"><%= f.label :email, "Електронна пошта" %><%= f.email_field :email, class: "field", required: true, autocomplete: "email" %></div>
+    <div class="form-group"><%= f.label :password, "Пароль (мінімум 8 символів)" %><%= f.password_field :password, class: "field", required: true, minlength: 8, autocomplete: "new-password" %></div>
+    <div class="form-group"><%= f.label :password_confirmation, "Повторіть пароль" %><%= f.password_field :password_confirmation, class: "field", required: true, minlength: 8, autocomplete: "new-password" %></div>
+    <%= f.submit "Створити акаунт", class: "btn btn-full" %>
+  <% end %><p class="auth-bottom">Вже маєте акаунт? <%= link_to "Увійти", new_session_path %></p>
+</div></section>

@@ -1,0 +1,10 @@
+<%= errors_for(@product) %>
+<%= form_with model: [:admin, @product] do |f| %>
+  <div class="form-group"><%= f.label :name, "Назва товару" %><%= f.text_field :name, class: "field", required: true %></div>
+  <div class="form-group"><%= f.label :category_id, "Категорія" %><%= f.collection_select :category_id, Category.order(:name), :id, :name, { prompt: "Оберіть категорію" }, { class: "field", required: true } %></div>
+  <div class="form-group"><%= f.label :description, "Опис" %><%= f.text_area :description, rows: 5, class: "field", required: true %></div>
+  <div class="two-fields"><div class="form-group"><%= f.label :price_uah, "Ціна, грн" %><%= f.number_field :price_uah, step: 0.01, min: 0.01, class: "field", required: true %></div><div class="form-group"><%= f.label :stock, "Кількість на складі" %><%= f.number_field :stock, min: 0, class: "field", required: true %></div></div>
+  <div class="form-group"><%= f.label :image_name, "Фотографія засобу" %><%= f.select :image_name, Product::PHOTO_INFO.map { |key, details| [details.fetch("product_type"), key] }, {}, class: "field" %></div>
+  <div class="form-group check-row"><%= f.check_box :active %><%= f.label :active, "Показувати товар у каталозі" %></div>
+  <%= f.submit "Зберегти", class: "btn" %>
+<% end %>

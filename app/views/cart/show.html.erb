@@ -1,0 +1,13 @@
+<% content_for :title, "Кошик — Stargazing" %>
+<section class="container section inner-page"><div class="eyebrow">ТВОЇ ОБРАНІ ТОВАРИ</div><h1>Мій <em>кошик</em></h1>
+  <% if @items.empty? %><div class="empty-state"><h2>Кошик поки порожній</h2><p>Саме час обрати щось приємне для себе.</p><%= link_to "До каталогу", products_path, class: "btn" %></div>
+  <% else %><div class="checkout-layout"><div class="cart-list">
+    <% @items.each do |item| %><article class="cart-line"><%= link_to product_path(item[:product]), class: "cart-photo" do %><%= product_illustration(item[:product]) %><% end %>
+      <div class="cart-info"><h3><%= link_to item[:product].name, product_path(item[:product]) %></h3><p><%= money(item[:product].price_cents) %> / шт.</p>
+        <%= form_with url: cart_item_path(item[:product].id), method: :patch, class: "quantity-form" do |f| %>
+          <%= f.number_field :quantity, value: item[:quantity], min: 0, max: 99, class: "field qty", aria: { label: "Кількість" } %><%= f.submit "Оновити", class: "btn btn-sm btn-outline" %>
+        <% end %>
+      </div><div class="cart-end"><strong><%= money(item[:line_total]) %></strong><%= button_to "Видалити", remove_cart_item_path(item[:product].id), method: :delete, class: "text-danger" %></div>
+    </article><% end %>
+  </div><aside class="order-summary"><h3>Ваше замовлення</h3><div class="summary-row"><span>Товари (<%= cart_count %>)</span><strong><%= money(cart_subtotal) %></strong></div><p class="muted">Вартість доставки розраховується на наступному кроці за демонстраційними тарифами.</p><div class="summary-total"><span>Разом без доставки</span><strong><%= money(cart_subtotal) %></strong></div><%= link_to "Оформити замовлення", new_checkout_path, class: "btn btn-full" %><%= link_to "Продовжити покупки", products_path, class: "continue-link" %></aside></div><% end %>
+</section>

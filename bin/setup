@@ -1,0 +1,10 @@
+#!/usr/bin/env ruby
+require "fileutils"
+require "pathname"
+root = Pathname.new(File.expand_path("..", __dir__))
+Dir.chdir(root) do
+  system("bundle", "install") || abort("Не вдалося встановити gems")
+  system("bin/rails", "db:prepare") || abort("Помилка підготовки БД")
+  system("bin/rails", "db:seed") || abort("Помилка початкових даних")
+  puts "Готово: bin/rails server"
+end

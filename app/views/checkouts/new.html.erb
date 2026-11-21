@@ -1,0 +1,14 @@
+<% content_for :title, "Оформлення — Stargazing" %>
+<section class="container section inner-page"><div class="eyebrow">МАЙЖЕ ГОТОВО</div><h1>Оформлення <em>замовлення</em></h1>
+<div class="checkout-layout"><div class="checkout-form card-panel"><%= errors_for(@order) %>
+<%= form_with model: @order, url: checkout_path do |f| %>
+  <h2>01. Контактні дані</h2><div class="form-group"><%= f.label :customer_name, "Ім’я та прізвище" %><%= f.text_field :customer_name, class: "field", required: true %></div>
+  <div class="form-group"><%= f.label :phone, "Номер телефону" %><%= f.telephone_field :phone, class: "field", required: true, placeholder: "+380XXXXXXXXX" %></div>
+  <h2>02. Доставка</h2><div class="form-group"><%= f.label :city, "Місто" %><%= f.text_field :city, class: "field", required: true %></div>
+  <div class="form-group"><%= f.label :address, "Адреса або відділення" %><%= f.text_field :address, class: "field", required: true, placeholder: "Вулиця, будинок або номер відділення" %></div>
+  <div class="form-group"><%= f.label :shipping_method, "Спосіб доставки" %><%= f.select :shipping_method, options_for_select(Order::SHIPPING.map { |key, (name, price)| ["#{name} — #{money(price)}", key] }, @order.shipping_method), {}, class: "field" %></div>
+  <h2>03. Оплата</h2><div class="form-group"><%= f.label :payment_method, "Спосіб оплати" %><%= f.select :payment_method, options_for_select(Order::PAYMENTS.select { |key, _| key != "demo_card" || !Rails.env.production? }.map { |key, name| [name, key] }, @order.payment_method), {}, class: "field" %></div>
+  <p class="notice-small"><strong>Важливо:</strong> оплата карткою — лише симуляція для курсової. Сайт не запитує реквізити карток і не списує кошти. Вартість доставки демонстраційна.</p>
+  <%= f.submit "Підтвердити замовлення", class: "btn btn-lg btn-full" %>
+<% end %></div><aside class="order-summary"><h3>Ваші товари</h3><% @items.each do |item| %><div class="summary-row"><span><%= item[:product].name %> × <%= item[:quantity] %></span><strong><%= money(item[:line_total]) %></strong></div><% end %><div class="summary-total"><span>Товари</span><strong><%= money(cart_subtotal) %></strong></div><p class="muted">Вартість доставки додасться відповідно до вибраного способу.</p></aside></div>
+</section>

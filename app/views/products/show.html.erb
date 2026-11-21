@@ -1,0 +1,38 @@
+<% content_for :title, "#{@product.name} — Stargazing" %>
+<section class="container section product-detail">
+  <div class="breadcrumbs"><%= link_to "Каталог", products_path %> / <%= @product.category.name %> / <%= @product.name %></div>
+  <div class="detail-grid">
+    <div class="detail-photo"><span class="photo-label">ВИБІР STARGAZING</span><%= product_illustration(@product, class_name: "detail-product-image") %></div>
+    <div class="detail-content">
+      <div class="eyebrow"><%= @product.category.name.upcase %> · ВИБІР STARGAZING</div>
+      <h1><%= @product.name %></h1>
+      <div class="stars"><%= @product.average_rating ? "★ #{@product.average_rating} / 5" : "Новий товар" %> · <%= @reviews.size %> відгуків</div>
+      <p class="detail-description"><%= @product.description %></p>
+      <p class="photo-disclaimer">Фото показує засіб відповідного типу. Упаковка навчального товару може відрізнятися.</p>
+      <div class="detail-price"><%= money(@product.price_cents) %></div>
+      <p class="stock <%= 'out-of-stock' if @product.stock.zero? %>"><%= @product.stock.positive? ? "● У наявності: #{@product.stock} шт." : "● Немає в наявності" %></p>
+      <%= form_with url: cart_items_path, method: :post, class: "buy-form" do |f| %>
+        <%= f.hidden_field :product_id, value: @product.id %>
+        <%= f.number_field :quantity, value: 1, min: 1, max: [@product.stock, 99].min, class: "field qty", aria: { label: "Кількість" } %>
+        <%= f.submit "Додати до кошика", class: "btn btn-lg", disabled: @product.stock.zero? %>
+      <% end %>
+      <%= button_to favorite?(@product) ? "♥ У твоєму обраному" : "♡ Додати до обраного", toggle_favorite_path(@product), method: :post, class: "btn btn-outline", style: "margin-top: 16px;" %>
+      <div class="detail-notes">✓ Зручна покупка · ✓ Вибір доставки · ✓ Історія замовлень</div>
+    </div>
+  </div>
+  <div class="reviews-section" id="reviews"><div class="section-head"><div class="eyebrow">ДУМКИ ПОКУПЦІВ</div><h2>Відгуки покупців</h2></div>
+    <div class="reviews-grid"><div>
+      <% if @reviews.empty? %><p class="muted">Поки немає відгуків. Стань першою людиною, яка поділиться враженнями.</p><% end %>
+      <% @reviews.each do |review| %><article class="review"><strong><%= review.user.name %></strong><span><%= "★" * review.rating %><%= "☆" * (5 - review.rating) %></span><p><%= review.body %></p><small><%= l(review.created_at, format: :short) rescue review.created_at.strftime("%d.%m.%Y") %></small></article><% end %>
+    </div><div class="review-form card-panel"><h3>Залишити відгук</h3>
+      <% if signed_in? %><%= errors_for(@review) %><%= form_with model: [@product, @review] do |f| %>
+        <div class="form-group"><%= f.label :rating, "Оцінка" %><%= f.select :rating, options_for_select((1..5).map { |n| ["#{n} із 5", n] }, 5), {}, class: "field" %></div>
+        <div class="form-group"><%= f.label :body, "Ваш досвід" %><%= f.text_area :body, rows: 5, class: "field", placeholder: "Що найбільше сподобалося?" %></div>
+        <%= f.submit "Опублікувати відгук", class: "btn" %>
+      <% end %><% else %><p class="muted">Щоб залишити відгук, увійдіть до облікового запису.</p><%= link_to "Увійти", new_session_path, class: "btn" %><% end %>
+    </div></div>
+  </div>
+  <% if @related_products.any? %>
+    <div class="reviews-section"><div class="section-kicker">МОЖЕ СПОДОБАТИСЯ</div><div class="section-head"><h2>Ще трішки <em>натхнення</em></h2></div><div class="product-grid"><%= render partial: "card", collection: @related_products, as: :product %></div></div>
+  <% end %>
+</section>

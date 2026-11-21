@@ -1,0 +1,128 @@
+{
+  "face-serum": {
+    "photo_id": 7795753,
+    "author": "Alesia Kozik",
+    "product_type": "Зволожувальна сироватка",
+    "alt": "Сироватка для обличчя",
+    "page": "https://www.pexels.com/photo/7795753/"
+  },
+  "face-cream": {
+    "photo_id": 7795663,
+    "author": "Alesia Kozik",
+    "product_type": "Крем для обличчя",
+    "alt": "Баночка крему",
+    "page": "https://www.pexels.com/photo/7795663/"
+  },
+  "face-cleanser": {
+    "photo_id": 6621472,
+    "author": "Monstera Production",
+    "product_type": "Пінка для вмивання",
+    "alt": "Засоби для очищення",
+    "page": "https://www.pexels.com/photo/6621472/"
+  },
+  "face-mask": {
+    "photo_id": 6690236,
+    "author": "Tara Winstead",
+    "product_type": "Очищувальна маска",
+    "alt": "Кремова маска",
+    "page": "https://www.pexels.com/photo/6690236/"
+  },
+  "sun-spf": {
+    "photo_id": 18323730,
+    "author": "Betül Üstün",
+    "product_type": "Сонцезахисний крем",
+    "alt": "Сонцезахисний засіб",
+    "page": "https://www.pexels.com/photo/18323730/"
+  },
+  "makeup-balm": {
+    "photo_id": 28528667,
+    "author": "Aljona Ovtšinnikova",
+    "product_type": "Блиск для губ",
+    "alt": "Тюбик косметичного засобу для губ на світлому тлі",
+    "page": "https://www.pexels.com/photo/28528667/"
+  },
+  "makeup-lipstick": {
+    "photo_id": 4022309,
+    "author": "Suzy Hazelwood",
+    "product_type": "Губна помада",
+    "alt": "Губна помада",
+    "page": "https://www.pexels.com/photo/4022309/"
+  },
+  "hair-mask": {
+    "photo_id": 7428096,
+    "author": "cottonbro studio",
+    "product_type": "Маска для волосся",
+    "alt": "Догляд за волоссям",
+    "page": "https://www.pexels.com/photo/7428096/"
+  },
+  "hair-shampoo": {
+    "photo_id": 17576518,
+    "author": "Doğu Tuncer",
+    "product_type": "Шампунь",
+    "alt": "Шампунь та кондиціонер",
+    "page": "https://www.pexels.com/photo/17576518/"
+  },
+  "body-lotion": {
+    "photo_id": 31865248,
+    "author": "Marta Branco",
+    "product_type": "Молочко для тіла",
+    "alt": "Засоби для тіла",
+    "page": "https://www.pexels.com/photo/31865248/"
+  },
+  "body-scrub": {
+    "photo_id": 7795646,
+    "author": "Alesia Kozik",
+    "product_type": "Скраб для тіла",
+    "alt": "Скраб для тіла",
+    "page": "https://www.pexels.com/photo/7795646/"
+  },
+  "face-mist": {
+    "photo_id": 24602066,
+    "author": "Moni Rathnak",
+    "product_type": "Міст для обличчя",
+    "alt": "Освіжувальний засіб",
+    "page": "https://www.pexels.com/photo/24602066/"
+  },
+  "night-cream": {
+    "photo_id": 13794471,
+    "author": "Brian Phetmeuangmay",
+    "product_type": "Нічний крем",
+    "alt": "Баночка крему",
+    "page": "https://www.pexels.com/photo/13794471/"
+  },
+  "hair-oil": {
+    "photo_id": 7795685,
+    "author": "Alesia Kozik",
+    "product_type": "Олійка для волосся",
+    "alt": "Олійка для догляду",
+    "page": "https://www.pexels.com/photo/7795685/"
+  },
+  "calm-mask": {
+    "photo_id": 10221859,
+    "author": "Ron Lach",
+    "product_type": "Заспокійлива маска",
+    "alt": "Баночка косметичного крему",
+    "page": "https://www.pexels.com/photo/10221859/"
+  },
+  "hand-cream": {
+    "photo_id": 13534705,
+    "author": "by Natallia",
+    "product_type": "BB-крем для обличчя",
+    "alt": "Червоний тюбик BB-крему на рожевому тлі",
+    "page": "https://www.pexels.com/photo/13534705/"
+  },
+  "scented-candle": {
+    "photo_id": 12349435,
+    "author": "Towfiqu barbhuiya",
+    "product_type": "Ароматична свічка",
+    "alt": "Ароматична свічка",
+    "page": "https://www.pexels.com/photo/12349435/"
+  },
+  "massage-oil": {
+    "photo_id": 15569180,
+    "author": "mearlywan",
+    "product_type": "Масажна олійка",
+    "alt": "Косметичні олії",
+    "page": "https://www.pexels.com/photo/15569180/"
+  }
+}

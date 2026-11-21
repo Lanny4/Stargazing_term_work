@@ -1,0 +1,23 @@
+<% content_for :title, "Каталог косметики та догляду — Stargazing" %>
+<section class="catalog-page-head">
+  <div class="container catalog-page-intro">
+    <div><div class="section-kicker">МАГАЗИН STARGAZING · КАТАЛОГ</div><h1>Твоя колекція <em>краси й турботи.</em></h1><p>Знайди засоби для щоденного догляду, відновлення сил і маленьких приємних ритуалів.</p></div>
+    <%= link_to "← На головну", root_path, class: "catalog-back-link" %>
+  </div>
+</section>
+<section class="section container catalog-section" id="catalog">
+  <div class="section-kicker">УСІ ТОВАРИ</div>
+  <div class="section-head"><div><h2>Обирай те, що <em>потрібно саме тобі.</em></h2><p class="catalog-intro">Догляд за обличчям, тілом, волоссям і косметика в одному місці.</p></div><span class="section-hint"><%= @products.length %> позицій на сторінці</span></div>
+  <div class="category-row"><%= link_to "Усі товари", products_path(anchor: "catalog"), class: "category-chip #{'active' unless @category}" %><% @categories.each do |category| %><%= link_to category.name, products_path(category: category.slug, anchor: "catalog"), class: "category-chip #{'active' if @category == category}" %><% end %></div>
+  <%= form_with url: products_path(anchor: "catalog"), method: :get, class: "filter-form" do |f| %>
+    <div class="search-field-wrap"><span aria-hidden="true">⌕</span><%= f.search_field :q, value: @query, placeholder: "Що шукаємо сьогодні?", class: "field", aria: { label: "Пошук товарів" } %></div>
+    <%= f.hidden_field :category, value: @category.slug if @category %>
+    <%= f.select :sort, options_for_select([["Новинки", "new"], ["Спочатку дешевші", "price_low"], ["Спочатку дорожчі", "price_high"]], @sort), {}, class: "field select-field", aria: { label: "Сортувати за" } %>
+    <%= f.submit "Знайти", class: "btn" %>
+    <% if @query.present? %><%= link_to "Скинути", products_path(anchor: "catalog"), class: "reset-filters" %><% end %>
+  <% end %>
+  <% if @products.any? %>
+    <div class="product-grid"><%= render partial: "card", collection: @products, as: :product %></div>
+    <% if @total_pages > 1 %><nav class="pagination" aria-label="Сторінки каталогу"><% (1..@total_pages).each do |page_number| %><%= link_to page_number, products_path(q: @query, category: @category&.slug, sort: @sort, page: page_number, anchor: "catalog"), class: "page-link #{'current' if page_number == @page}" %><% end %></nav><% end %>
+  <% else %><div class="empty-state"><div class="empty-icon">✧</div><h3>Здається, тут поки тихо</h3><p>Спробуй інший запит або обери нову категорію.</p><%= link_to "Переглянути всі товари", products_path(anchor: "catalog"), class: "btn" %></div><% end %>
+</section>

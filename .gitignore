@@ -1,0 +1,15 @@
+/.bundle
+/.env
+/.env.*
+!/.env.example
+/log/*
+/tmp/*
+/storage/*.sqlite3*
+/vendor/bundle
+/public/assets
+/config/credentials/*.key
+/config/master.key
+.DS_Store
+
+# Backup files
+*.bak

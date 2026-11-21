@@ -1,0 +1,2 @@
+<% content_for :title, "Повідомлення — адмінпанель" %>
+<section class="container section inner-page admin"><div class="eyebrow">ДЕТАЛІ ПОВІДОМЛЕННЯ</div><h1><%= @message.subject %></h1><%= link_to "← Повідомлення", admin_contact_messages_path, class: "text-link" %><div class="card-panel"><p><strong>Автор:</strong> <%= @message.name %></p><p><strong>Електронна пошта:</strong> <%= @message.email %></p><p><strong>Надіслано:</strong> <%= @message.created_at.strftime("%d.%m.%Y %H:%M") %></p><p><%= simple_format(@message.message) %></p></div></section>

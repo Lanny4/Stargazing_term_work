@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+  <title><%= content_for(:title) || "Stargazing — Інтернет-магазин косметики" %></title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#1d2342">
+  <meta name="description" content="Stargazing — навчальний інтернет-магазин косметики, догляду за шкірою та товарів для відпочинку.">
+  <%= csrf_meta_tags %>
+  <%= csp_meta_tag %>
+  <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
+</head>
+<body>
+  <a href="#main-content" class="skip-link">Перейти до вмісту</a>
+  <div class="topbar"><span class="topbar-star">✦</span> НАВЧАЛЬНИЙ МАГАЗИН КОСМЕТИКИ <span class="topbar-divider">·</span> ОПЛАТА КАРТКОЮ — ЛИШЕ ДЕМО <span class="topbar-star">✦</span></div>
+  <header class="site-header">
+    <div class="container nav-wrap">
+      <%= link_to root_path, class: "brand", aria: { label: "Stargazing — на головну" } do %>
+        <span class="brand-mark" aria-hidden="true">✧</span>
+        <span class="brand-word">stargazing<small>МАГАЗИН КОСМЕТИКИ</small></span>
+      <% end %>
+      <nav class="main-nav" aria-label="Основна навігація">
+        <%= link_to "Головна", root_path, class: (current_page?(root_path) ? "nav-active" : "") %>
+        <%= link_to "Каталог", products_path, class: (current_page?(products_path) ? "nav-active" : "") %>
+        <%= link_to "Наша історія", about_path %>
+        <%= link_to "Доставка й оплата", delivery_path %>
+        <%= link_to "Контакти", new_contact_message_path %>
+      </nav>
+      <div class="nav-actions">
+        <%= link_to favorites_path, class: "action-link fav-link", aria: { label: "Обране, #{favorite_count} товарів" } do %><span aria-hidden="true">♡</span><span class="action-count"><%= favorite_count %></span><% end %>
+        <%= link_to cart_path, class: "action-link cart-link", aria: { label: "Кошик, #{cart_count} товарів" } do %><span aria-hidden="true">▣</span><span class="action-count"><%= cart_count %></span><% end %>
+        <% if signed_in? %>
+          <%= link_to "Мої замовлення", orders_path, class: "account-link" %>
+          <%= link_to "Адмін", admin_root_path, class: "account-link" if current_user.admin? %>
+          <%= button_to "Вийти", session_path, method: :delete, class: "account-link link-button logout-button" %>
+        <% else %>
+          <%= link_to "Увійти", new_session_path, class: "account-link" %>
+        <% end %>
+        <details class="mobile-menu"><summary aria-label="Відкрити меню">☰</summary><div class="mobile-menu-panel">
+          <%= link_to "Головна", root_path %>
+          <%= link_to "Каталог товарів", products_path %>
+          <%= link_to "Наша історія", about_path %>
+          <%= link_to "Доставка й оплата", delivery_path %>
+          <%= link_to "Контакти", new_contact_message_path %>
+          <%= link_to "Обране", favorites_path %>
+          <%= link_to "Мої замовлення", orders_path if signed_in? %>
+          <%= link_to "Адмінпанель", admin_root_path if current_user&.admin? %>
+          <%= link_to "Увійти / Реєстрація", new_session_path unless signed_in? %>
+          <%= button_to "Вийти", session_path, method: :delete, class: "link-button" if signed_in? %>
+        </div></details>
+      </div>
+    </div>
+  </header>
+  <main id="main-content">
+    <div class="container alerts"><% flash.each do |kind, message| %><div class="flash <%= kind.to_s == "alert" ? "flash-error" : "flash-ok" %>" role="status"><%= message %></div><% end %></div>
+    <%= yield %>
+  </main>
+  <footer class="footer">
+    <div class="container footer-grid">
+      <div class="footer-lead"><span class="footer-brand">✧ stargazing</span><p>Догляд, що робить звичайний вечір трохи особливішим. Вибирай улюблені ритуали догляду без поспіху.</p><span class="footer-sign">ТВОЄ СЯЙВО. ТВІЙ ВСЕСВІТ.</span></div>
+      <div><h4>Магазин</h4><%= link_to "Усі товари", products_path %><%= link_to "Обране", favorites_path %><%= link_to "Мої замовлення", orders_path if signed_in? %></div>
+      <div><h4>Інформація</h4><%= link_to "Про Stargazing", about_path %><%= link_to "Доставка та оплата", delivery_path %><%= link_to "Написати нам", new_contact_message_path %></div>
+      <div><h4>Звʼязок</h4><p>Навчальна демонстрація<br>Івано-Франківськ, Україна</p><%= link_to "Надіслати повідомлення", new_contact_message_path %></div>
+    </div>
+    <div class="container footnote"><span>© 2026 Stargazing · Курсова робота №86 · Ruby on Rails</span><span>Товари, ціни, доставка й оплата — демонстраційні. Реальні замовлення не обробляються.</span></div>
+  </footer>
+</body>
+</html>

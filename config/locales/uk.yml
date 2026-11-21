@@ -1,0 +1,39 @@
+uk:
+  date:
+    formats:
+      default: "%d.%m.%Y"
+  time:
+    formats:
+      default: "%d.%m.%Y %H:%M"
+      short: "%d.%m.%Y"
+  activerecord:
+    models:
+      user: "Користувач"
+      product: "Товар"
+      order: "Замовлення"
+      review: "Відгук"
+    attributes:
+      user:
+        name: "Ім’я"
+        email: "Електронна пошта"
+        password: "Пароль"
+        password_confirmation: "Підтвердження пароля"
+      product:
+        name: "Назва"
+        description: "Опис"
+        price_cents: "Ціна"
+        stock: "Кількість"
+      review:
+        rating: "Оцінка"
+        body: "Текст відгуку"
+      order:
+        customer_name: "Ім’я замовника"
+        phone: "Телефон"
+        city: "Місто"
+        address: "Адреса"
+  errors:
+    messages:
+      blank: "не може бути порожнім"
+      invalid: "має некоректний формат"
+      taken: "вже використовується"
+      too_short: "занадто коротке"
